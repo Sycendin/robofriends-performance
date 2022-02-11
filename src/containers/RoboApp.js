@@ -9,6 +9,8 @@ import ErrorBoundry from "../components/ErrorBoundry";
 //redux
 import { connect } from 'react-redux'
 import { requestRobots, setSearchField } from "../action";
+// performance
+import Header from "../components/Header";
 //376 tell me what state i need to listen to and send it down as props
 const mapStateToProps = state =>{
     return {
@@ -61,7 +63,7 @@ class RoboApp extends Component {
  (
         
         <Fragment>
-        <h1 className="f1 ">RoboFriends </h1>
+            <Header/>
         <SearchBox searchChange={onSearchChange}/>
         {/* <CardList robots={robots}/> */}
         {/* 230 */}
@@ -78,5 +80,5 @@ class RoboApp extends Component {
  }
 
 //376
-// connect is ah higer order function -> returns another function
+// connect is ah higher order function -> returns another function
 export default connect(mapStateToProps, mapDispatchToProps)(RoboApp);
